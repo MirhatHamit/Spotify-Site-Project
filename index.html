@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <!-- sol kısım -->
+    <aside>
+      <img id="logo-text" src="/images/spo.png" />
+      <img id="logo" src="/images/no-text.png" />
+      <nav>
+        <a href="/">
+          <i class="bi bi-house-fill"></i>
+          <span>Ansayfa</span>
+        </a>
+        <a href="#">
+          <i class="bi bi-search"></i>
+          <span>Arama</span>
+        </a>
+        <a href="#">
+          <i class="bi bi-bookmark-fill"></i>
+          <span>Kütüphanen</span>
+        </a>
+        <a href="#">
+          <i class="bi bi-music-note-list"></i>
+          <span>Çalma Listeleri</span>
+        </a>
+        <a href="#">
+          <i class="bi bi-heart-fill"></i>
+          <span>Beğenilen Şarkılar</span>
+           <!-- <div class="card">
+            <figure>
+              <img
+                src="https://is2-ssl.mzstatic.com/image/thumb/Music3/v4/5c/d5/1f/5cd51f06-dbd4-5d45-c849-44b0a79a1eb4/cover.jpg/400x400cc.jpg"
+              />
+              <div class="play">
+                <i id="play-btn" class="bi bi-play-fill"></i>
+              </div>
+            </figure>
+            <h4>Kibariye</h4>
+            <p>Lafımı Olur</p>
+          </div> -->
+        </a>
+      </nav>
+    </aside>
+    <!-- ana içerik -->
+    <main>
+      <header>
+        <form id="search-form">
+          <input placeholder="şarkı ismi giriniz..." type="text" />
+          <button><i class="bi bi-search"></i></button>
+        </form>
+        <ul>
+          <li>Premium</li>
+          <li>Destek</li>
+          <li>İndirmeler</li>
+          <li>Kayıtol</li>
+        </ul>
+      </header>
+
+      <div class="songs">
+        <h2 id="title">Türkiyede en popüler</h2>
+
+        <div id="list">
+          <!-- kart -->
+          <!-- <div class="card">
+            <figure>
+              <img
+                src="https://is2-ssl.mzstatic.com/image/thumb/Music3/v4/5c/d5/1f/5cd51f06-dbd4-5d45-c849-44b0a79a1eb4/cover.jpg/400x400cc.jpg"
+              />
+              <div class="play">
+                <i id="play-btn" class="bi bi-play-fill"></i>
+              </div>
+            </figure>
+            <h4>Kibariye</h4>
+            <p>Lafımı Olur</p>
+          </div> -->
+          <!-- kart -->
+        </div>
+      </div>
+    </main>
+    <!-- aktif şarkı barı -->
+    <div class="playing">
+      <!-- <div class="info">
+        <img
+          src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/c4/b2/f2/c4b2f2ae-5122-d699-2191-d6b438ed199f/cover.jpg/400x400cc.jpg"
+        />
+        <div>
+          <p>Şuan Oynatilıyor</p>
+          <h3>Şarkı İsmi</h3>
+        </div> 
+      </div>
+
+      <audio controls>
+        <source
+          src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/69/0b/b3/690bb3ec-cda5-cf2f-c86d-03c98c48db9a/mzaf_16116283004972729891.plus.aac.ep.m4a"
+        />
+      </audio> -->
+    </div>
+
+    <!-- js bağlantı -->
+    <script src="main.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,445 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  background: black;
+  color: white;
+  overflow: hidden;
+  font-family: "poppins";
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px 15px;
+}
+aside nav {
+  display: flex;
+  flex-direction: column;
+}
+aside nav a {
+  padding: 20px 10px;
+  display: flex;
+  gap: 5px;
+  border-radius: 10px;
+  white-space: nowrap;
+  transition: all 0.3s;
+}
+@media (max-width: 870px) {
+  aside nav a span {
+    display: none;
+  }
+  aside nav a i {
+    font-size: 20px;
+  }
+}
+aside nav a:hover {
+  background: rgb(32, 32, 32);
+}
+aside #logo {
+  display: none;
+  width: 40px;
+}
+@media (max-width: 870px) {
+  aside #logo-text {
+    display: none;
+  }
+  aside #logo {
+    display: block;
+  }
+}
+aside img {
+  max-width: 130px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+main {
+  width: 100%;
+}
+
+main header {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 10px;
+}
+@media (max-width: 870px) {
+  main header {
+    justify-content: center;
+  }
+}
+main header form {
+  display: flex;
+}
+main header form input {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+main header form button {
+  background: #1db954;
+  height: 100%;
+  padding: 0 25px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  border-radius: 0 5px 5px 0;
+}
+main header form button:hover {
+  background: #0ff15e;
+}
+main header ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+@media (max-width: 870px) {
+  main header ul {
+    display: none;
+  }
+}
+main header ul li {
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 300ms;
+}
+main header ul li:hover {
+  background: rgb(60, 60, 60);
+}
+
+main .songs {
+  background: rgb(42, 42, 42);
+  height: 100%;
+  text-transform: capitalize;
+}
+
+main .songs #title {
+  padding: 20px;
+}
+
+main #list {
+  margin-top: 20px;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 80vh;
+  overflow-y: auto;
+  gap: 20px;
+}
+main #list::-webkit-scrollbar {
+  background: black;
+  width: 8px;
+}
+main #list::-webkit-scrollbar-thumb {
+  background: #0e9c3f;
+}
+@media (max-width: 768px) {
+  main #list {
+    justify-content: center;
+    gap: 50px;
+  }
+}
+main #list .card {
+  width: 200px;
+  padding: 15px;
+  background: #181818;
+  border-radius: 6px;
+  cursor: pointer;
+}
+main #list .card:hover .play {
+  opacity: 1;
+  bottom: 20px;
+}
+main #list .card figure {
+  position: relative;
+}
+main #list .card figure img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+main #list .card figure .play {
+  position: absolute;
+  background: #1db954;
+  right: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  font-size: 23px;
+  opacity: 0;
+  bottom: -20px;
+  transition: all 0.3s;
+}
+main #list .card figure .play:hover {
+  background: #0e9c3f;
+  scale: 0.9;
+}
+main #list .card h4 {
+  margin-bottom: 6px;
+}
+
+.playing {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  z-index: 100;
+  padding: 10px 40px;
+  width: 100%;
+  background-color: #fa8bff;
+  background-image: linear-gradient(240deg, #fa8bff 0%, #2bd2ff 52%, #2bff88 90%);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.612);
+}
+@media (max-width: 768px) {
+  .playing {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+.playing .info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.playing .info img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.playing audio {
+  width: 300px;
+}
+
+.animate {
+  animation: turn 4s linear infinite;
+}
+
+@keyframes turn {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.wave-menu {
+  margin: auto;
+  border: 4px solid #545FE5;
+  border-radius: 50px;
+  width: 200px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: ease 0.2s;
+  position: relative;
+  background: #fff;
+}
+
+.wave-menu li {
+  list-style: none;
+  height: 30px;
+  width: 4px;
+  border-radius: 10px;
+  background: #545FE5;
+  margin: 0 6px;
+  padding: 0;
+  animation-name: wave1;
+  animation-duration: 0.3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  transition: ease 0.2s;
+}
+
+.wave-menu:hover > li {
+  background: #fff;
+}
+
+.wave-menu:hover {
+  background: #545FE5;
+}
+
+.wave-menu li:nth-child(2) {
+  animation-name: wave2;
+  animation-delay: 0.2s;
+}
+
+.wave-menu li:nth-child(3) {
+  animation-name: wave3;
+  animation-delay: 0.23s;
+  animation-duration: 0.4s;
+}
+
+.wave-menu li:nth-child(4) {
+  animation-name: wave4;
+  animation-delay: 0.1s;
+  animation-duration: 0.3s;
+}
+
+.wave-menu li:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.wave-menu li:nth-child(6) {
+  animation-name: wave2;
+  animation-duration: 0.5s;
+}
+
+.wave-menu li:nth-child(8) {
+  animation-name: wave4;
+  animation-delay: 0.4s;
+  animation-duration: 0.25s;
+}
+
+.wave-menu li:nth-child(9) {
+  animation-name: wave3;
+  animation-delay: 0.15s;
+}
+
+@keyframes wave1 {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0.5);
+  }
+}
+@keyframes wave2 {
+  from {
+    transform: scaleY(0.3);
+  }
+  to {
+    transform: scaleY(0.6);
+  }
+}
+@keyframes wave3 {
+  from {
+    transform: scaleY(0.6);
+  }
+  to {
+    transform: scaleY(0.8);
+  }
+}
+@keyframes wave4 {
+  from {
+    transform: scaleY(0.2);
+  }
+  to {
+    transform: scaleY(0.5);
+  }
+}
+.buttons {
+  display: flex;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.play-btn,
+.pause-btn {
+  font-size: 16px;
+  color: #fff;
+  margin-right: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.play-btn:hover,
+.pause-btn:hover {
+  transform: scale(1.2);
+}
+
+@keyframes progress-animation {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 30px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: 100ms;
+  margin-left: 90%;
+}
+
+.checkmark {
+  right: 0;
+  height: 1em;
+  width: 1em;
+  transition: 100ms;
+  animation: dislike_effect 400ms ease;
+}
+
+.container input:checked ~ .checkmark path {
+  fill: #f8f0f0;
+  stroke-width: 0;
+}
+
+.container input:checked ~ .checkmark {
+  animation: like_effect 400ms ease;
+}
+
+.container:hover {
+  transform: scale(1.1);
+}
+
+@keyframes like_effect {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes dislike_effect {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}/*# sourceMappingURL=style.css.map */
